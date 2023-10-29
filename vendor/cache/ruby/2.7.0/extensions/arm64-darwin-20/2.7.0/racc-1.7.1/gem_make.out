@@ -1,0 +1,20 @@
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/racc-1.7.1/ext/racc/cparse
+/Users/anjali/.rvm/rubies/ruby-2.7.2/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-vr2s7o sitelibdir\=./.gem.20231029-92627-vr2s7o clean
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-vr2s7o sitelibdir\=./.gem.20231029-92627-vr2s7o
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-vr2s7o sitelibdir\=./.gem.20231029-92627-vr2s7o install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20231029-92627-vr2s7o/racc
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-vr2s7o sitelibdir\=./.gem.20231029-92627-vr2s7o clean

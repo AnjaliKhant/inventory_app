@@ -1,0 +1,18 @@
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+/Users/anjali/.rvm/rubies/ruby-2.7.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-gs3l0h sitelibdir\=./.gem.20231029-92627-gs3l0h clean
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-gs3l0h sitelibdir\=./.gem.20231029-92627-gs3l0h
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-gs3l0h sitelibdir\=./.gem.20231029-92627-gs3l0h install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20231029-92627-gs3l0h
+
+current directory: /Users/anjali/Project/potloc/inventory_app/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20231029-92627-gs3l0h sitelibdir\=./.gem.20231029-92627-gs3l0h clean
