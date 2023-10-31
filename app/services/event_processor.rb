@@ -16,15 +16,19 @@ class EventProcessor
   # Save a batch of events to the database
   def self.save_batch
     ActiveRecord::Base.transaction do
-      @@event_buffer.each do |event|
-        store = Store.find_or_create_by(name: event['store'])
-        shoe = Shoe.find_or_create_by(name: event['model'])
-
-        Inventory.create(
-          store: store,
-          shoe: shoe,
-          inventory_count: event['inventory']
-        )
+      grouped_events = @@event_buffer.group_by { |event| [event['store'], event['model']] }
+    
+      grouped_events.each do |(store_name, shoe_name), events|
+        store = Store.find_or_create_by(name: store_name)
+        shoe = Shoe.find_or_create_by(name: shoe_name)
+    
+        events.each do |event|
+          Inventory.create(
+            store: store,
+            shoe: shoe,
+            inventory_count: event['inventory']
+          )
+        end
       end
     end
 
