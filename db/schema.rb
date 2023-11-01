@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_31_003239) do
+ActiveRecord::Schema.define(version: 2023_11_01_015650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "error_logs", force: :cascade do |t|
+    t.string "error"
+    t.json "data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "inventories", force: :cascade do |t|
     t.bigint "store_id", null: false

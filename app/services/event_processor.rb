@@ -15,20 +15,25 @@ class EventProcessor
 
   # Save a batch of events to the database
   def self.save_batch
-    ActiveRecord::Base.transaction do
-      grouped_events = @@event_buffer.group_by { |event| [event['store'], event['model']] }
+    grouped_events = @@event_buffer.group_by { |event| [event['store'], event['model']] }
+
+    grouped_events.each do |(store_name, shoe_name), events|
+      store = Store.find_or_create_by(name: store_name)
+      shoe = Shoe.find_or_create_by(name: shoe_name)
     
-      grouped_events.each do |(store_name, shoe_name), events|
-        store = Store.find_or_create_by(name: store_name)
-        shoe = Shoe.find_or_create_by(name: shoe_name)
-    
-        events.each do |event|
-          Inventory.create(
-            store: store,
-            shoe: shoe,
-            inventory_count: event['inventory']
-          )
+      begin
+        ActiveRecord::Base.transaction do
+          events.each do |event|
+            Inventory.create!(
+              store: store,
+              shoe: shoe,
+              inventory_count: event['inventory']
+            )
+          end
         end
+      rescue StandardError => e
+        # Handle the error, and store the error data in the error_logs table
+        ErrorLog.create(error: e.message, data: events.to_json, timestamp: Time.now)
       end
     end
 
